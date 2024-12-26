@@ -2,7 +2,7 @@ import pandas
 import requests
 import json
 
-Loop = True
+mainLoop = True
 BASE_URL = 'http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item='
 
 def getItemByName(itemName):
@@ -29,7 +29,7 @@ def getItemById(itemId):
         print("Past 90 Days - " + str(itemData['item']['day90']))
         print("Past 180 Days - " + str(itemData['item']['day180']) + "\n")
 
-while Loop:
+while mainLoop:
     innerLoop = True
     inputType = input("\nWould you like to search by id or name? ").lower()    
 
@@ -51,7 +51,7 @@ while Loop:
             case "yes":
                 innerLoop = False
             case "no":
-                Loop = False
+                mainLoop = False
                 innerLoop = False
             case _:
                 print("\nPlease choose a valid option \n") 
