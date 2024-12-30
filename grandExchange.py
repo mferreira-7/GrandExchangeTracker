@@ -3,10 +3,10 @@ import requests
 import json
 
 mainLoop = True
-BASE_URL = 'http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item='
+BASE_URL = "http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item="
 
 def getItemByName(itemName):
-    with open('Personal Projects/GrandExchangeTracker/GE_JSON.json') as file: 
+    with open("GE_JSON.json") as file: 
         data = json.load(file)
     try:
         inputItemID = str(data[itemName.capitalize()])
